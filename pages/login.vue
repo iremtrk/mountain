@@ -6,9 +6,9 @@
 
             <p v-if="errorMessage" class="text-red-500 text-sm mt-2 mb-2 text-center">{{ errorMessage }}</p>
 
-            <input type="text" v-model="username" placeholder="Username" class="border p-2 w-full mb-4 rounded"  @keyup.enter="login"> <br>
+            <input type="text" v-model="username" placeholder="Username" required class="border p-2 w-full mb-4 rounded"  @keyup.enter="login"> <br>
 
-            <input type="password" v-model="password" placeholder="password" class="border p-2 w-full mb-4 rounded"  @keyup.enter="login"> <br>
+            <input type="password" v-model="password" placeholder="password" required class="border p-2 w-full mb-4 rounded"  @keyup.enter="login"> <br>
 
             <button @click="login" class="bg-[#1cbac8] text-white px-4 py-1 w-full rounded">Login</button>
         </div>

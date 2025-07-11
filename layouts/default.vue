@@ -2,6 +2,7 @@
     <div>
         <base-navigation/>
         <slot/>
+        <footer-mountain/>
     </div>
 </template>
 

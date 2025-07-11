@@ -4,14 +4,17 @@
             class="absolute top-0 left-0 w-full h-full bg-cover bg-center transition-opacity duration-1000"
             :class="currentIndex === index ? 'opacity-100 z-10' : 'opacity-0 z-0'"
             :style="`background-image: url(${slide.image})`">
-            <div
-                class="w-full h-full bg-black bg-opacity-60 flex flex-col justify-center items-center text-center text-white px-4" @mouseenter="stopAutoPlay" @mouseleave="startAutoPlay">
+            <div class="w-full h-full bg-black bg-opacity-60 flex flex-col justify-center items-center text-center text-white px-4"
+                @mouseenter="stopAutoPlay" @mouseleave="startAutoPlay">
                 <h2 class="text-3xl md:text-5xl font-bold mb-4 leading-tight whitespace-pre-line">{{ slide.title }}</h2>
-                <p class="max-w-xl text-sm md:text-base mb-6" >{{ slide.text }}</p>
+                <span class="text-[#1cbac8] text-4xl leading-none mb-4">•••••</span>
+                <p class="max-w-xl text-sm md:text-base mb-6">{{ slide.text }}</p>
 
-                <button class="bg-[#1cbac8] hover:bg-[#17a5b2] px-6 py-3 rounded font-semibold transition">
+                <nuxt-link to="/"
+                    class="bg-[#1cbac8] hover:bg-transparent border-2 border-[#1cbac8] hover:text-[#1cbac8] hover:border-2 px-6 py-3 rounded-sm font-semibold transition ">
                     EXPLORE MORE
-                </button>
+                </nuxt-link>
+
             </div>
         </div>
 
@@ -34,7 +37,7 @@
 
 <script setup>
 const slides = [
-        {
+    {
         title: 'AWESOME TEMPLATES \n TO PROMOTE YOUR SERVICES',
         text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.\
         Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s. \
@@ -75,9 +78,15 @@ const prevSlide = () => {
     currentIndex.value = (currentIndex.value - 1 + slides.length) % slides.length
 }
 
+let intervalId = null
+
 onMounted(() => {
-  setInterval(() => {
+  intervalId = setInterval(() => {
     nextSlide()
-  }, 7000)
+  }, 10000)
+})
+
+onBeforeUnmount(() => {
+  clearInterval(intervalId)
 })
 </script>

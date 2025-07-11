@@ -2,6 +2,7 @@
     <div>   
         <div>
             <hero-slider/>
+            <our/>
         </div>
     </div>
 </template>
