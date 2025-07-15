@@ -1,7 +1,6 @@
 <template>
 
     <div class="max-w-screen-xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center justify-between gap-10">
-
         <div class="space-y-6 text-left relative">
             <h5 class="text-[#1cbac8] font-bold">REGISTER</h5>
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Start Your Free Trial</h2>
@@ -12,7 +11,7 @@
             </p>
 
             <ul class="space-y-2">
-                <li v-for="(item, i) in listItems" :key="i" class="flex items-start gap-2">
+                <li v-for="(item, index) in listItems" :key="index" class="flex items-start gap-2">
                     <span class="text-[#1cbac8] mt-1">
                         <Icon name="heroicons:arrow-right-circle" />
                     </span>
@@ -21,13 +20,15 @@
             </ul>
 
             <nuxt-img src="/images/register-form-arrow.png" alt="Arrow"
-                class="hidden md:block absolute bottom-8 left-1/2 translate-x-12 w-28" />
+                class="hidden md:block absolute bottom-8 left-1/2 translate-x-12 w-28" >
+            </nuxt-img>
         </div>
 
         <div class="bg-white shadow-md rounded-md p-8 md:w-1/2 space-y-4">
             <h3 class="text-xl font-bold text-gray-900">REGISTER NOW</h3>
             <p class="text-gray-500 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod
-                tempor ever since the 1500s.</p>
+                tempor ever since the 1500s.
+            </p>
 
             <p v-if="successMessage" class="text-green-500 text-sm">{{ successMessage }}</p>
             <p v-if="errorMessage" class="text-red-500 text-sm">{{ errorMessage }}</p>
@@ -52,7 +53,6 @@
                 </p>
             </div>
         </div>
-
     </div>
 
 </template>
@@ -81,8 +81,6 @@ const validateName = (value) => {
 }
 
 const submitForm = () => {
-    errorMessage.value = ''
-    successMessage.value = ''
     if (!name.value || !email.value || !tel.value) {
         errorMessage.value = 'Please fill out all fields.'
         return

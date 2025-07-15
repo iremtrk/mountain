@@ -4,8 +4,7 @@
             class="absolute top-0 left-0 w-full h-full bg-cover bg-center transition-opacity duration-1000"
             :class="currentIndex === index ? 'opacity-100 z-10' : 'opacity-0 z-0'"
             :style="`background-image: url(${slide.image})`">
-            <div class="w-full h-full bg-black bg-opacity-60 flex flex-col justify-center items-center text-center text-white px-4"
-                @mouseenter="stopAutoPlay" @mouseleave="startAutoPlay">
+            <div class="w-full h-full bg-black bg-opacity-50 flex flex-col justify-center items-center text-center text-white px-4">
                 <h2 class="text-3xl md:text-5xl font-bold mb-4 leading-tight whitespace-pre-line">{{ slide.title }}</h2>
                 <span class="text-[#1cbac8] text-4xl leading-none mb-4">•••••</span>
                 <p class="max-w-xl text-sm md:text-base mb-6">{{ slide.text }}</p>
@@ -14,17 +13,16 @@
                     class="bg-[#1cbac8] hover:bg-transparent border-2 border-[#1cbac8] hover:text-[#1cbac8] hover:border-2 px-6 py-3 rounded-sm font-semibold transition ">
                     EXPLORE MORE
                 </nuxt-link>
-
             </div>
         </div>
 
         <button @click="prevSlide"
-            class="z-20 absolute left-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-40 text-white p-3 rounded-full">
+            class="z-20 absolute left-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-40 text-white py-6 px-4 hover:bg-[#1cbac8]">
             ‹
         </button>
 
         <button @click="nextSlide"
-            class="z-20 absolute right-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-40 text-white p-3 rounded-full">
+            class="z-20 absolute right-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-40 text-white py-6 px-4 hover:bg-[#1cbac8]">
             ›
         </button>
 

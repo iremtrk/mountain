@@ -14,8 +14,6 @@
 
             <button @click="login" class="bg-[#1cbac8] text-white px-4 py-1 w-full rounded">Login</button>
         </div>
-
-
     </div>
 </template>
 
@@ -33,9 +31,8 @@ const errorMessage = ref('')
 const login = () => {
     if (!username.value || !password.value) {
         errorMessage.value = 'Please fill in the required fields'
-        return
     }
-    if (username.value === 'admin' && password.value === '1234') {
+    else if (username.value === 'admin' && password.value === '1234') {
         localStorage.setItem('isLoggedIn', 'true')
         router.push('/')
     }

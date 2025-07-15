@@ -3,7 +3,8 @@
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center justify-items-center mb-20">
             <div v-for="(item, index) in clients" :key="index">
                 <nuxt-img :src="item.image" alt="client logo"
-                    class="w-28 h-auto object-contain grayscale hover:grayscale-0 transition" />
+                    class="w-28 h-auto object-contain grayscale hover:grayscale-0 transition" 
+                </nuxt-img>
             </div>
         </div>
     </div>
@@ -20,7 +21,7 @@
             </p>
                 <nuxt-link to="/registerNow"
                     class="bg-[#1cbac8] hover:bg-transparent border-2 border-[#1cbac8] hover:text-[#1cbac8] hover:border-2 px-6 py-3 rounded-sm font-semibold transition ">
-                    EXPLORE MORE
+                    READY TO START
                 </nuxt-link>
         </div>
     </div>

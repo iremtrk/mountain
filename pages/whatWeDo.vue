@@ -1,18 +1,15 @@
 <template>
     <div class="max-w-screen-xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-
-        <div class="flex justify-center">
+        <div>
             <nuxt-img src="/images/what-we-do.jpg" alt="What We Can Do"
-                class="max-w-[450px] w-full h-auto object-contain" />
+                class="max-w-[450px] w-full h-auto object-contain" >
+            </nuxt-img>
         </div>
-
         <div class="space-y-6">
             <p class="text-[#1cbac8] font-bold tracking-wide">SERVICES</p>
-
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
                 What We Can Do
             </h2>
-
             <div class="text-[#1cbac8] text-3xl">•••••</div>
 
             <p class="text-gray-400 text-sm leading-relaxed">
