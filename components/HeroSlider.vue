@@ -42,28 +42,28 @@ const slides = [
         text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.\
         Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s. \
         Lorem Ipsum is simply dummy text of the printing industry.',
-        image: '/images/slide-4.jpg'
+        image: '/images/slides/slide-4.jpg'
     },
     {
         title: 'AWESOME TEMPLATES \n TO PROMOTE YOUR SERVICES',
         text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.\
         Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s. \
         Lorem Ipsum is simply dummy text of the printing industry.',
-        image: '/images/slide-1.jpg'
+        image: '/images/slides/slide-1.jpg'
     },
     {
         title: 'AWESOME TEMPLATES \n TO PROMOTE YOUR SERVICES',
         text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.\
         Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s. \
         Lorem Ipsum is simply dummy text of the printing industry.',
-        image: '/images/slide-2.jpg'
+        image: '/images/slides/slide-2.jpg'
     },
     {
         title: 'AWESOME TEMPLATES \n TO PROMOTE YOUR SERVICES',
         text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.\
         Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s. \
         Lorem Ipsum is simply dummy text of the printing industry.',
-        image: '/images/slide-3.jpg'
+        image: '/images/slides/slide-3.jpg'
     }
 
 ]

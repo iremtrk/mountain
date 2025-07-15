@@ -2,7 +2,6 @@
   <div>
     <header class="bg-white shadow">
       <nav class="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between">
-    
         <nuxt-link to="/">
           <nuxt-img width="78" height="50" src="/images/logo.png" alt="logo" />
         </nuxt-link>
@@ -31,13 +30,18 @@
         </ul>
         <nuxt-link to="/registerNow"
           class="bg-[#1cbac8] text-white font-bold px-4 py-2 rounded hover:bg-black transition">READY TO START
-        </nuxt-link>
-      </nav>
+        </nuxt-link> 
+        <button @click="logout" class="bg-[#1cbac8] text-white font-bold ml-4 px-4 py-2 rounded hover:bg-black transition"> LOG OUT</button>
+      </nav> 
     </header>
   </div>
 </template>
 
 
 <script setup>
-
+const router = useRouter()
+const logout = () => {
+  localStorage.removeItem('isLoggedIn')
+  router.push('/login')
+}
 </script>

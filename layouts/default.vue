@@ -1,7 +1,9 @@
 <template>
-    <div>
+    <div class="min-h-screen flex flex-col">
         <base-navigation/>
-        <slot/>
+        <main class="flex-1">
+          <slot/>
+        </main>
         <footer-mountain/>
     </div>
 </template>

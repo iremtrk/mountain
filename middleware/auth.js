@@ -1,5 +1,5 @@
 export default defineNuxtRouteMiddleware((to) => {
-  const isLoggedIn = useCookie('isLoggedIn')
+  const isLoggedIn = process.import.meta.client && localStorage.getItem('isLoggedIn')
 
 
   if (!isLoggedIn.value && to.path !== '/login') {

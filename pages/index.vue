@@ -8,5 +8,10 @@
 </template>
 
 <script setup>
+const router = useRouter()
 
+const logout = () => {
+  localStorage.removeItem('isLoggedIn')
+  router.push('/login')
+}
 </script>
