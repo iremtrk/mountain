@@ -1,6 +1,6 @@
 <template>
     <div>   
-        <div>
+        <div class="pb-[70px]">
             <hero-slider/>
             <our/>
         </div>
