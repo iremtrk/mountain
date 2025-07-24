@@ -29,6 +29,16 @@
 
 
 <script setup>
+
+defineI18nRoute({
+  paths: {
+    en: '/clients',
+    tr: '/müsteriler'
+  }
+})
+
+
+
 const clients = ref([
     { image: '/images/clients/img-1.png' },
     { image: '/images/clients/img-2.png' },

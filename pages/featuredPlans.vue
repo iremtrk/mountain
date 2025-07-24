@@ -2,13 +2,13 @@
 <template>
   <div class="max-w-screen-xl mx-auto flex flex-col px-6 py-16 md:flex-row items-center justify-between gap-10">
     <div v-for="plan in $tm('plans')" 
-      class="bg-[#f7f7f7] border rounded-lg shadow-lg p-10 text-center w-full md:w-1/3">
+      class="bg-gray-100 dark:bg-gray-900 border rounded-lg shadow-lg p-10 text-center w-full md:w-1/3">
       <div class="text-2xl mb-4">{{ plan.star }}</div>
       <h2 class="text-xl border-b font-bold mb-4">{{ plan.name }}</h2>
       <p class="text-4xl font-bold mb-2">{{ plan.price }}</p>
-      <p class="text-gray-500 mb-6">{{plan.per}}</p>
+      <p class="text-gray-500 dark:text-gray-300 mb-6">{{plan.per}}</p>
 
-      <ul class="space-y-4 text-left text-gray-700">
+      <ul class="space-y-4 text-left text-gray-700 dark:text-gray-300">
         <li v-for="feature in plan.features"
           class="flex items-center justify-between border-b py-5">
           <span class="font-semibold">{{ feature.name }}</span>
@@ -29,6 +29,15 @@
 </template>
 
 <script setup>
+
+defineI18nRoute({
+  paths: {
+    en: '/featuredPlans',
+    tr: '/oneCikanPlanlar'
+  }
+})
+
+
 
 // const plans = ref([
 //   {

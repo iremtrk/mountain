@@ -2,28 +2,45 @@ export default defineI18nConfig(() => {
   return {
     welcome: "Welcome",
     //login
-    login:{
-      title:"Login",
+    login: {
+      title: "Login",
+      username: "Username",
+      password: "Password",
+      button: "Login",
+      required: "Please fill in the required fields",
+      incorrect: "Username or password is incorrect",
+    },
+    //signUp
+    signUp:{
+      title:"Sign Up",
       username:"Username",
+      email:"E-mail",
       password:"Password",
-      button:"Login",
-      required:"Please fill in the required fields",
-      incorrect:"Username or password is incorrect"
-      
+      button:"Sign Up",
+      required: "Please fill in the required fields",
+      usernameError: "Username must be at least 3 letters long",
+      emailError: "Please enter a valid email address",
+      passwordError: "Password must be at least 6 characters long",
+      successMessage: "Successfully registered!",
     },
     //navigation
-    header:{
-        nav: [
+    header: {
+      nav: [
         { label: "Home", to: "/", target: "_self" },
         { label: "What We Do", to: "/whatWeDo", target: "_self" },
-        { label: "Featured Projects", to: "/featuredProjects", target: "_self" },
+        {
+          label: "Featured Projects",
+          to: "/featuredProjects",
+          target: "_self",
+        },
         { label: "Register Now", to: "/registerNow", target: "_self" },
         { label: "Featured Plans", to: "/featuredPlans", target: "_self" },
         { label: "Testimonials", to: "/testimonials", target: "_self" },
-        { label: "Clients", to: "/clients", target: "_blank" },
-        ],
-        button:"READY TO START",
-        buttonlog:"LOG OUT"
+        { label: "Clients", to: "/clients", target: "_self" },
+      ],
+      button: "READY TO START",
+      buttonlog: "LOG OUT",
+      user:"Welcome"
     },
     //home
     //slider
@@ -50,7 +67,7 @@ export default defineI18nConfig(() => {
           image: "/images/slides/slide-3.jpg",
         },
       ],
-      button:"EXPLORE MORE"
+      button: "EXPLORE MORE",
     },
     //our
     "our-all": {
@@ -121,6 +138,9 @@ export default defineI18nConfig(() => {
           more: "Read More",
         },
       ],
+      path: {
+        en: "/featuredProjects",
+      },
     },
     //registerNow
     register: {
@@ -135,22 +155,20 @@ export default defineI18nConfig(() => {
         "Fresh Design",
         "Useful and Intuitive Interface",
       ],
-      form:{
-        title:"REGISTER NOW",
-        content:"Lorem Ipsum",
-        successMessage:"Thank you for your submission!",
-        requiredError:"Please fill out all fields",
-        nameError:"Name must be at least 3 letters long",
-        emailError:"Please enter a valid email address",
-        telError:"Please enter a valid phone number",
-        yourName:"Name",
-        yourEmail:"Email",
-        yourTel:"Phone Number",
-        button:"READY TO START",
-        info:"We will never share your personal info"
-
-
-      }
+      form: {
+        title: "REGISTER NOW",
+        content: "Lorem Ipsum",
+        successMessage: "Thank you for your submission!",
+        requiredError: "Please fill out all fields",
+        nameError: "Name must be at least 3 letters long",
+        emailError: "Please enter a valid email address",
+        telError: "Please enter a valid phone number",
+        yourName: "Name",
+        yourEmail: "Email",
+        yourTel: "Phone Number",
+        button: "READY TO START",
+        info: "We will never share your personal info",
+      },
     },
     //featured plans
     plans: [
@@ -216,6 +234,7 @@ export default defineI18nConfig(() => {
           image: "/images/testimonials/testimonials-1.jpg",
         },
       ],
+      path: "/testimonials",
     },
     // client page
     actions: {

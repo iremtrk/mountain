@@ -2,22 +2,22 @@
     <div class="max-w-screen-xl mx-auto px-6 py-16 text-center">
         <div>
             <h5 class="text-[#1cbac8] font-bold">{{ $t('testimonials.sup-title') }}</h5>
-            <h2 class="md:text-4xl font-bold text-gray-900 mb-2">{{ $t('testimonials.title') }}</h2>
+            <h2 class="md:text-4xl font-bold text-gray-900 dark:text-white mb-2">{{ $t('testimonials.title') }}</h2>
             <span class="text-[#1cbac8] text-3xl mb-6">•••••</span>
-            <p class="text-gray-600 max-w-2xl mx-auto mb-10 text-sm">
+            <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-10 text-sm">
                 {{ $t('testimonials.content') }}
             </p>
         </div> <br> <br>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div v-for="item in $tm('testimonials.items')"
-                class="block bg-white shadow-md rounded-md hover:shadow-lg transition relative pt-20 pb-6 px-4">
+                class="block bg-white dark:bg-gray-800 shadow-md rounded-md hover:shadow-lg transition relative pt-20 pb-6 px-4">
                 <nuxt-img :src="item['image']" :alt="item['name']"
                     class="w-24 h-24 object-cover border-4 border-white shadow absolute -top-12 left-1/2 -translate-x-1/2" />
 
                 <div class="text-center mt-4">
                     <h3 class="text-lg font-bold text-[#1cbac8]">{{ item.name }}</h3>
-                    <p class="text-sm text-gray-600 mb-3">{{ item.text }}</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-300 mb-3">{{ item.text }}</p>
                     <span class="text-[#1cbac8]">★★★★★</span>
                 </div>
             </div>
@@ -28,6 +28,16 @@
 
 
 <script setup>
+const{t,tm}=useI18n()
+
+defineI18nRoute({
+  paths: {
+    en: $tm('testimonials.path'),
+    tr: $tm('testimonials.path')
+  }
+})
+
+
 // const testimonials = ref([
 //     {
 //         name: 'MORAD HAMDY',
@@ -46,8 +56,7 @@
 //     },
 // ])
 
-
-const testimonials1 = computed(() => testimonials.value.slice(0, 3))
+const testimonials = computed(() => testimonials.value.slice(0, 3))
 onMounted(() => {
     setInterval(() => {
         const first = testimonials.value.shift()

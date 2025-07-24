@@ -11,6 +11,19 @@ export default defineI18nConfig(() => {
       incorrect:"Kullanıcı adı veya şifre hatalı"
       
     },
+        //signUp
+    signUp:{
+      title:"Kaydol",
+      username:"Kullanıcı Adı",
+      email:"E-posta",
+      password:"Şifre",
+      button:"Kaydol",
+      required:"Lütfen gerekli alanları doldurun",
+      usernameError: "Kullanıcı adı en az 3 harf uzunluğunda olmalıdır",
+      emailError: "Lütfen geçerli bir e-posta adresi girin",
+      passwordError: "Şifre en az 6 karakter uzunluğunda olmalıdır",
+      successMessage: "Başarıyla kaydedildi!",
+    },
     //navigation
     header:{
       nav: [
@@ -23,7 +36,8 @@ export default defineI18nConfig(() => {
         { label: "Müşteriler", to: "/clients", target: "_blank" },
       ],
       button:"BAŞLA",
-      buttonlog:"ÇIKIŞ"
+      buttonlog:"ÇIKIŞ",
+      user:"Hoşgeldin"
     },
     //home
     //slides
@@ -121,6 +135,9 @@ export default defineI18nConfig(() => {
           more: "Daha Fazla",
         },
       ],
+      path: {
+        tr: "/oneCikanProjeler",
+      },
     },
     //registerNow
     register: {
@@ -152,6 +169,7 @@ export default defineI18nConfig(() => {
     },
     //featured plans
     plans: [
+      
       {
         star: "★",
         name: "TEMEL",
@@ -214,6 +232,7 @@ export default defineI18nConfig(() => {
           image: "/images/testimonials/testimonials-1.jpg",
         },
       ],
+      path:'/referanslar'
     },
     // client page
     actions: {

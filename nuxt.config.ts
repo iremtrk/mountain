@@ -1,6 +1,3 @@
-import FeaturedPlans from "./pages/featuredPlans.vue";
-import FeaturedProjects from "./pages/featuredProjects.vue";
-import WhatWeDo from "./pages/whatWeDo.vue";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -12,7 +9,11 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxtjs/i18n',
+    '@nuxtjs/color-mode',
   ],
+  colorMode:{
+    classSuffix:''
+  },
   googleFonts:{
     families:{
       Ubuntu:true,
@@ -25,43 +26,43 @@ export default defineNuxtConfig({
       { code: 'tr', language: 'tr-TR' , file:'tr.js'}
     ],
     defaultLocale: 'en',
-    strategy: 'prefix_except_default',
-    customRoutes:'config',
-    pages:{
-      login:{
-        en:'/login',
-        tr:'/girisYap'
-      },
-      index:{
-        en:'/',
-        tr:'/'
-      },
-      whatWeDo:{
-        en:'/whatWeDo',
-        tr:'/neYapabiliriz'
-      },
-      featuredProjects:{
-        en:'/featuredProjects',
-        tr:'/oneCikanProjeler'
-      },
-      registerNow:{
-        en:'/registerNow',
-        tr:'/kayitOl'
-      },
-      FeaturedPlans:{
-        en:'/featuredPlans',
-        tr:'/oneCikanPlanlar'
-      },
-      testimonials:{
-        en:'/testimonials',
-        tr:'/referanslar'
-      },
-      clients:{
-        en:'/clients', 
-        tr:'/müsteriler'     
-      }
+    strategy: 'prefix_and_default',
+    customRoutes:'page',
+    // pages:{
+    //   login:{
+    //     en:'/login',
+    //     tr:'/girisYap'
+    //   },
+    //   index:{
+    //     en:'/',
+    //     tr:'/'
+    //   },
+    //   whatWeDo:{
+    //     en:'/whatWeDo',
+    //     tr:'/neYapabiliriz'
+    //   },
+    //   featuredProjects:{
+    //     en:'/featuredProjects',
+    //     tr:'/oneCikanProjeler'
+    //   },
+    //   registerNow:{
+    //     en:'/registerNow',
+    //     tr:'/kayitOl'
+    //   },
+    //   featuredPlans:{
+    //     en:'/featuredPlans',
+    //     tr:'/oneCikanPlanlar'
+    //   },
+    //   testimonials:{
+    //     en:'/testimonials',
+    //     tr:'/referanslar'
+    //   },
+    //   clients:{
+    //     en:'/clients', 
+    //     tr:'/müsteriler'     
+    //   }
 
-    }
+    // }
   },
   css: ['@/assets/css/main.css'],
 
