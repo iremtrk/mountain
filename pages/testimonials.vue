@@ -10,7 +10,7 @@
         </div> <br> <br>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div v-for="item in $tm('testimonials.items')"
+            <div v-for="item in testimonials"
                 class="block bg-white dark:bg-gray-800 shadow-md rounded-md hover:shadow-lg transition relative pt-20 pb-6 px-4">
                 <nuxt-img :src="item['image']" :alt="item['name']"
                     class="w-24 h-24 object-cover border-4 border-white shadow absolute -top-12 left-1/2 -translate-x-1/2" />
@@ -29,11 +29,12 @@
 
 <script setup>
 const{t,tm}=useI18n()
+const testimonials = ref(tm('testimonials.items'))
 
 defineI18nRoute({
   paths: {
-    en: $tm('testimonials.path'),
-    tr: $tm('testimonials.path')
+    en: '/testimonials',
+    tr: '/referanslar'
   }
 })
 
@@ -56,7 +57,7 @@ defineI18nRoute({
 //     },
 // ])
 
-const testimonials = computed(() => testimonials.value.slice(0, 3))
+const testimonialslice = computed(() => testimonials.value.slice(0, 3))
 onMounted(() => {
     setInterval(() => {
         const first = testimonials.value.shift()

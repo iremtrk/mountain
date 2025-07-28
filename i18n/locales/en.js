@@ -42,6 +42,34 @@ export default defineI18nConfig(() => {
       buttonlog: "LOG OUT",
       user:"Welcome"
     },
+    //profile
+    profile:{
+      title:'Welcome back',
+      sub_title:'What would you like to do?',
+      form:{
+        email:'Email Address',
+        changemail:'Change Email Address',
+        phemail:'New email',
+        button:'Save',
+        password:'Password',
+        changepass:'Change Password',
+        phpass:'Current Password',
+        phpassnew:'New Password'
+      },
+      delete:{
+        button:'Delete Account',
+        title:'Are you sure',
+        content:'Please enter your password to confirm account deletion.',
+        cancelbtn:'Cancel',
+        deletebtn:'Delete'
+      },
+      updateEmailErrorMessage:'New email cannot be the same as the current email.',
+      emailSuccesMessage:'Email changed successfully.',
+      emailErrorMessage:'Email change failed.',
+      updatePasswordErrorMessage:'New password cannot be the same as the current password.',
+
+
+    },
     //home
     //slider
     slides: {

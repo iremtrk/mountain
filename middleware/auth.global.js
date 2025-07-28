@@ -1,5 +1,3 @@
-import { useCookie } from '#app'
-
 export default defineNuxtRouteMiddleware((to) => {
   const authCookie = useCookie('auth')
   const isLoggedIn = !!authCookie.value

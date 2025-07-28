@@ -12,12 +12,14 @@
                 class="block bg-white dark:bg-gray-800 shadow-md rounded-md overflow-hidden hover:shadow-lg transition text-left">
                 <nuxt-img :src="item['image']" :alt="item['title']" class="w-full h-64 object-cover" />
                 <div class="p-5">
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2 hover:underline hover:text-[#1cbac8]">
+                    <h3
+                        class="text-lg font-bold text-gray-900 dark:text-white mb-2 hover:underline hover:text-[#1cbac8]">
                         {{ item.title }}
                     </h3>
                     <div class="text-[#1cbac8] text-xl mb-2">•••</div>
                     <p class="text-sm text-gray-600 dark:text-gray-300 mb-3">{{ item.description }}</p>
-                    <span class="text-[#1cbac8] text-sm font-medium hover:underline hover:text-gray-900 dark:hover:text-white">
+                    <span
+                        class="text-[#1cbac8] text-sm font-medium hover:underline hover:text-gray-900 dark:hover:text-white">
                         {{ item.more }}
                     </span>
                 </div>
@@ -32,7 +34,12 @@
 const { t, tm } = useI18n()
 const allProjects = ref(tm('projects.items'))
 
-
+defineI18nRoute({
+    paths: {
+        en: '/featuredProjects',
+        tr: '/oneCikanProjeler'
+    }
+})
 
 
 // const allProjects = ref([

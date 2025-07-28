@@ -2,12 +2,14 @@
   <div class="pt-[70px]">
     <header class="bg-white dark:bg-gray-900 shadow fixed top-0 w-full z-50 text-black dark:text-white">
       <nav class="max-w-screen-2xl mx-auto px-6 py-3 flex items-center justify-between">
-
+        <div v-if="weatherData" class="flex items-center gap-1 text-sm px-4">
+          <span class="text-[#1cbac8] px-1"><i class="fa-solid fa-temperature-half"></i></span>
+          <span>{{ Math.round(weatherData.main.temp) }}°C, {{ weatherData.weather[0].description }}</span>
+        </div>
         <nuxt-link to="/">
           <nuxt-img width="78" height="50" src="/images/logo.png" alt="logo" />
         </nuxt-link>
 
-        <!--nav bar-->
         <ul class="hidden md:flex flex-1 justify-center space-x-6 font-semibold text-sm">
           <li v-for="item in nav" :key="item.to" class="hover:text-[#1cbac8]">
             <nuxt-link :to="$localePath(item.to)" :target="item.target">
@@ -40,12 +42,11 @@
         <button @click="toggleDark" class="px-4">
           <Icon :name="isDark ? 'heroicons:sun' : 'heroicons:moon'" class="text-[#1cbac8] text-3xl" />
         </button>
-        <div v-if="user" class="ml-4">
+        <div  class="ml-4">
           {{ t('header.user') }},
-          <nuxt-link to="/"> <b>{{ user.username }} </b>
+          <nuxt-link :to="`/profile/${user.username}`"> <b>{{ user.username }} </b>
           </nuxt-link>
         </div>
-        <!-- denemeeeeee -->
         <button @click="isOpen = !isOpen" class="md:hidden">
           <i class="fa-solid fa-bars"></i>
         </button>
@@ -66,20 +67,26 @@
 
 
 <script setup>
-import { useCookie } from '#app'
 
-const { t, tm } = useI18n()
+const config = useRuntimeConfig()
+
+const { t, tm, locales, locale, setLocale } = useI18n()
 const nav = computed(() => tm('header.nav'))
-
-const { locales, setLocale } = useI18n()
-const localeRoute = useLocaleRoute()
-const { localePath } = useI18n()
 
 const isOpen = ref(false)
 const isSelect = ref(false)
-
-const router = useRouter()
-const route = useRoute()
+console.log(locale.value)
+const { data: weatherData } = await useFetch(
+  'https://api.openweathermap.org/data/2.5/weather',
+  {
+    params: {
+      q: 'Istanbul',
+      units: 'metric',
+      lang: locale.value,
+      appid: config.public.openweatherApiKey
+    }
+  }
+)
 
 const authCookie = useCookie('auth')
 const user = computed(() => {
@@ -105,9 +112,10 @@ const logout = () => {
   navigateTo('/login')
 }
 
-const isDark = ref(false)
+const { isDark, toggleDark } = useDarkMode()
+//const isDark = ref(false)
 
-const toggleDark = () => {
+/*const toggleDark = () => {
   isDark.value = !isDark.value
   if (isDark.value) {
     document.documentElement.classList.add('dark')
@@ -116,9 +124,6 @@ const toggleDark = () => {
     document.documentElement.classList.remove('dark')
     localStorage.setItem('theme', 'light')
   }
-}
+}*/
 
-onMounted(() => {
-  console.log('Navbar user:', user.value)
-})
 </script>

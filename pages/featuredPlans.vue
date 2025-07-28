@@ -13,8 +13,8 @@
           class="flex items-center justify-between border-b py-5">
           <span class="font-semibold">{{ feature.name }}</span>
           <span class="ml-2">
-            <Icon name="heroicons:check" v-if="feature.available" class="h-5 w-5 text-black" />
-            <Icon name="heroicons:x-circle" v-else class="h-5 w-5 text-black" />
+            <Icon name="heroicons:check" v-if="feature.available" class="h-5 w-5 text-black dark:text-white" />
+            <Icon name="heroicons:x-circle" v-else class="h-5 w-5 text-black dark:text-white" />
           </span>
         </li>
       </ul>

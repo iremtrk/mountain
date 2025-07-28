@@ -61,6 +61,8 @@ const { locales, setLocale } = useI18n()
 const { t } = useI18n()
 const { localePath } = useI18n()
 
+const { isDark, toggleDark } = useDarkMode()
+
 
 const login = async () => {
   if (!username.value || !password.value) {
@@ -86,26 +88,4 @@ const login = async () => {
 }
 
 
-const isDark = ref(false)
-
-const toggleDark = () => {
-  isDark.value = !isDark.value
-  if (isDark.value) {
-    document.documentElement.classList.add('dark')
-    localStorage.setItem('theme', 'dark')
-  } else {
-    document.documentElement.classList.remove('dark')
-    localStorage.setItem('theme', 'light')
-  }
-}
-
-onMounted(() => {
-  if (localStorage.getItem('theme') === 'dark' || document.documentElement.classList.contains('dark')) {
-    isDark.value = true
-    document.documentElement.classList.add('dark')
-  } else {
-    isDark.value = false
-    document.documentElement.classList.remove('dark')
-  }
-})
 </script>

@@ -11,7 +11,7 @@ export default defineI18nConfig(() => {
       incorrect:"Kullanıcı adı veya şifre hatalı"
       
     },
-        //signUp
+    //signUp
     signUp:{
       title:"Kaydol",
       username:"Kullanıcı Adı",
@@ -33,11 +33,33 @@ export default defineI18nConfig(() => {
         { label: "Kayıt ol", to: "/registerNow", target: "_self" },
         { label: "Öne Çıkan Planlar", to: "/featuredPlans", target: "_self" },
         { label: "Referanslar", to: "/testimonials", target: "_self" },
-        { label: "Müşteriler", to: "/clients", target: "_blank" },
+        { label: "Müşteriler", to: "/clients", target: "_self" },
       ],
       button:"BAŞLA",
       buttonlog:"ÇIKIŞ",
       user:"Hoşgeldin"
+    },
+    //profile
+    profile:{
+      title:'Tekrar hoşgeldin',
+      sub_title:'Ne yapmak istersin?',
+      form:{
+        email:'E_posta Adresi',
+        changemail:'Change Email Address',
+        phemail:'New email',
+        button:'Save',
+        password:'Password',
+        changepass:'Change Password',
+        phpass:'Current Password',
+        phpassnew:'New Password'
+      },
+      delete:{
+        button:'Delete Account',
+        title:'Are you sure',
+        content:'Please enter your password to confirm account deletion.',
+        cancelbtn:'Cancel',
+        deletebtn:'Delete'
+      },
     },
     //home
     //slides

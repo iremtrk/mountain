@@ -51,6 +51,8 @@
 
 <script setup>
 
+const { isDark, toggleDark } = useDarkMode()
+
 const isSelect = ref(false)
 const username = ref('')
 const email = ref('')
@@ -122,26 +124,4 @@ const signUp = async () => {
 }
 
 
-const isDark = ref(false)
-
-const toggleDark = () => {
-    isDark.value = !isDark.value
-    if (isDark.value) {
-        document.documentElement.classList.add('dark')
-        localStorage.setItem('theme', 'dark')
-    } else {
-        document.documentElement.classList.remove('dark')
-        localStorage.setItem('theme', 'light')
-    }
-}
-
-onMounted(() => {
-    if (localStorage.getItem('theme') === 'dark' || document.documentElement.classList.contains('dark')) {
-        isDark.value = true
-        document.documentElement.classList.add('dark')
-    } else {
-        isDark.value = false
-        document.documentElement.classList.remove('dark')
-    }
-})
 </script>
